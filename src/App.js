@@ -1,11 +1,25 @@
+import { CssBaseline, makeStyles } from '@material-ui/core';
 import './App.css';
-import Sidemenu from "./components/sidemenu";
+import Header from './components/Header';
+import Sidemenu from "./components/SideMenu";
+
+const useStyles=makeStyles({
+  appMain:{
+    paddingLeft:'320px',
+    width:'100%'
+  }
+})
 
 function App() {
+  const classes=useStyles()
   return (
-    <div className="App">
+    <>
       <Sidemenu/>
-    </div>
+      <div className={classes.appMain}>
+        <Header/>
+      </div>
+      <CssBaseline/>
+    </>
   );
 }
 
